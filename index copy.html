@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ergo PLANO</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Orbitron" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=IBMPlexMono" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=inconsolata" />
+<link rel="stylesheet" type="text/css" href="d3.parcoords.css">
+<link rel="stylesheet" type="text/css" href="hypercube.css">
+</head>
+<body id="myPage">
+  <!-- Sidebar on click -->
+  <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2"
+    id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()"
+      class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+      <i class="fa fa-remove"></i>
+    </a>
+    <a href="#" class="w3-bar-item w3-button">Sigap</a>
+    <a href="https://sites.google.com/view/ifernandezdesigner/inicio" class="w3-bar-item w3-button">Google Sites</a>
+    <a href="https://portfolioslider.ignacioxiphos.repl.co/" class="w3-bar-item w3-button">Slider Portfolio</a>
+  </nav>
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-black">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
+        href="javascript:void(0);" onclick="openNav()"><i class="fa fa-envelope-o "></i></a>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications"><a href="#team" class="">About Us</a></button>
+        <a href="#" class="">|</a>
+      </div>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications"><a href="#work" class="">Work</a> <i
+            class="fa fa-caret-down"></i></button>
+        <a href="#" class="">|</a>
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+          <a href="#" class="w3-bar-item w3-button">Work 1</a>
+          <a href="https://sites.google.com/view/ifernandezdesigner/inicio" class="w3-bar-item w3-button">Work 2</a>
+          <a href="https://portfolioslider.ignacioxiphos.repl.co/" class="w3-bar-item w3-button">Work 3</a>
+        </div>
+      </div>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications"><a href="#services" class="">Services</a> <i
+            class="fa fa-caret-down"></i></button>
+        <a href="#" class="">|</a>
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+          <a href="#" class="w3-bar-item w3-button">Marketing Digital</a>
+          <a href="#" class="w3-bar-item w3-button">Transformación Digital</a>
+          <a href="#" class="w3-bar-item w3-button">Diseño Gráfico</a>
+          <a href="#" class="w3-bar-item w3-button">Redes Sociales </a>
+          <a href="#" class="w3-bar-item w3-button">Datos e Información </a>
+          <a href="#" class="w3-bar-item w3-button">Soporte Técnico</a>
+        </div>
+      </div>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications"><a href="#pricing" class="">Packs</a></button>
+        <a href="#" class="">|</a>
+      </div>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black"><a href="#contact" class="">Contact</a></button>
+      </div>
+      <div class="w3-dropdown-hover w3-hide-small w3-right">
+        <button class="w3-button" title="Notifications"><a href="#" class="" title="Search"><i
+              class="fa fa-male"></i>Ergonomic</a></button>
+      </div>
+    </div>
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-white">
+      <a href="#" class="w3-bar-item w3-button">Home</a>
+      <a href="#team" class="w3-bar-item w3-button">About Us</a>
+      <a href="#services" class="w3-bar-item w3-button">Services</a>
+      <a href="#work" class="w3-bar-item w3-button">Work</a>
+      <a href="#pricing" class="w3-bar-item w3-button">Packs</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+  <!-- Background -->
+  <!-- Image Header -->
+ <!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="cabecera.jpg" alt="Architecture" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>BR</b></span> <span class="w3-hide-small w3-text-light-grey">Architects</span></h1>
+  </div>
+</header>
+  <!-- Modal -->
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+      <header class="w3-container w3-teal w3-display-container">
+        <span onclick="document.getElementById('id01').style.display='none'"
+          class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+        <h4>Oh snap! We just showed you a modal..</h4>
+        <h5>Because we can <i class="fa fa-smile-o"></i></h5>
+      </header>
+      <div class="w3-container">
+        <p>Cool huh? Ok, enough teasing around..</p>
+        <p><a class="w3-text-teal" href=""></a></p>
+      </div>
+      <footer class="w3-container w3-teal">
+        <p><!--Modal footer--></p>
+      </footer>
+    </div>
+  </div>
+  <!-- Clients -->
+  <img src="bannerMesadetrabajo1.png" class="" style="align-items: center; text-align: center; margin-left: 7.5%; margin-right: 25%;">
+  <!-- Services Container -->
+  <div class="w3-row-padding w3-padding-64 w3-white">
+    <div class="w3-show-small w3-hide-large">
+     
+    </div>
+    <a class="w3-hide-small" style="color:black;"">
+      <center>SERVICIOS</center>
+    </a>
+    <div class="" id="services">
+      <center>
+        <div class="w3-container w3-padding-32 w3-justify" id="services">
+          <!-- for small screens -->
+          <div class="w3-third w3-opacity w3-hover-opacity-off w3-show-small w3-hide-medium w3-hide-large">
+            <div class="example-2 cards">
+              <div class="rapper">
+                <div class="data">
+                  <div class="content">
+                    <div class="content">
+                      <a href="#" class="" style="color: #000000;">SERVICIOS</a>
+                      <br>
+                      <ol>
+                        <li>DISEÑO GRÁFICO</li>
+                        <li>IDENTIDAD DE MARCA</li>
+                        <li>CREACIÓN DE CONTENIDO</li>
+                        <li>GESTIÓN DE REDES</li>
+                        <li>GOOGLE ADS</li>
+                        <li>FACEBOOK E INSTAGRAM ADS</li>
+                        <li>EMAIL MARKETING</li>
+                        <li>DISEÑO WEB Y BACKEND</li>
+                        <li>TIENDAS ONLINE</li>
+                        <li>PRODUCCIÓN AUDIOVISUAL</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w3-center w3-justify">
+          <div class="w3-third w3-opacity w3-hover-opacity-off w3-hide-small">
+            <div class="example-2 card" onclick="miFuncionStart()">
+              <div class="wrapper">
+                <div class="header">
+                  <div class="date w3-left">
+                    <a href="#" class="Ergonomic" style="background-color: #000000">Ergonomic</a>
+                  </div>
+                </div>
+                <div class="data">
+                  <h1 class="number">1</h1>
+                  <div class="content">
+                    <div class="content">
+                      <span class="author">Marketing </span>
+                      <h1 class="title">Digital</h1>
+                      <ol>
+                        <il>Comunity Managment</il>
+                        <il>Branding Digital</il>
+                        <il>E-Mail Marketing</il>
+                        <il>Facebook e Instagram ADS</il>
+                        <il>Google ADS</il>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w3-third w3-opacity w3-hover-opacity-off w3-hide-small">
+            <div class="example-2 card" onclick="miFuncionStart()">
+              <div class="wrapper">
+                <div class="header">
+                  <div class="date w3-left">
+                    <a href="#" class="Ergonomic" style="background-color: #000000">Ergonomic</a>
+                  </div>
+                </div>
+                <div class="data">
+                  <h1 class="number">2</h1>
+                  <div class="content">
+                    <div class="content">
+                      <span class="author">Transformación
+                      </span>
+                      <h1 class="title">Digital
+                      </h1>
+                      <ol>
+                        <il>CRM</il>
+                        <il>Landingpage</il>
+                        <il>E-Commerce</il>
+                        <il>Catalogos Online</il>
+                        <il>Tienda Nube</il>
+                        <il>Mercado Shops</il>
+                        <il>Estrategias SEO</il>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w3-third w3-opacity w3-hover-opacity-off w3-hide-small">
+            <div class="example-2 card" onclick="miFuncionStart()">
+              <div class="wrapper">
+                <div class="header">
+                  <div class="date w3-left">
+                    <a href="#" class="Ergonomic" style="background-color: #000000">Ergonomic</a>
+                  </div>
+                </div>
+                <div class="data">
+                  <h1 class="number">3</h1>
+                  <div class="content">
+                    <div class="content">
+                      <span class="author">Diseño
+                      </span>
+                      <h1 class="title">Gráfico
+                      </h1>
+                      <ol>
+                        <il>Logotipos</il>
+                        <il>Catálogos</il>
+                        <il>Packaging</il>
+                        <il>Flyers</il>
+                        <il>Cartelerias</il>
+                        <il>Identidad/Marca</il>
+                        <il>Gráficas/Redes</il>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w3-third w3-opacity w3-hover-opacity-off w3-hide-small">
+            <div class="example-2 card" onclick="miFuncionStart()">
+              <div class="wrapper">
+                <div class="header">
+                  <div class="date w3-left">
+                    <a href="#" class="Ergonomic" style="background-color: #000000">Ergonomic</a>
+                  </div>
+                </div>
+                <div class="data">
+                  <h1 class="number">4</h1>
+                  <div class="content">
+                    <div class="content">
+                      <span class="author">Redes
+                      </span>
+                      <h1 class="title">Sociales
+                      </h1>
+                      <ol>
+                        <il>Fotografía</il>
+                        <il>Producción Audiovisual</il>
+                        <il>Marketing de Contenido</il>
+                        <il>Gestión de Redes</il>
+                        <il>Comunity Managment</il>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w3-third w3-opacity w3-hover-opacity-off w3-hide-small">
+            <div class="example-2 card" onclick="miFuncionStart()">
+              <div class="wrapper">
+                <div class="header">
+                  <div class="date w3-left">
+                    <a href="#" class="Ergonomic" style="background-color: #000000">Ergonomic</a>
+                  </div>
+                </div>
+                <div class="data">
+                  <h1 class="number">5</h1>
+                  <div class="content">
+                    <div class="content">
+                      <span class="author">Datos
+                      </span>
+                      <h1 class="title">Información
+                      </h1>
+                      <ol>
+                        <il>Carga de Datos (Data Entry)</il>
+                        <il>Digitalización de Documentos</il>
+                        <il>Creación de Tutoriales</il>
+                        <il>Gestión de Chatbots</il>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w3-third w3-opacity w3-hover-opacity-off w3-hide-small">
+            <div class="example-2 card" onclick="miFuncionStart()">
+              <div class="wrapper">
+                <div class="header">
+                  <div class="date w3-left">
+                    <a href="#" class="Ergonomic" style="background-color: #000000">Ergonomic</a>
+                  </div>
+                </div>
+                <div class="data">
+                  <h1 class="number">6</h1>
+                  <div class="content">
+                    <div class="content">
+                      <span class="author">Soporte</span>
+                      <h1 class="title">Técnico</h1>
+                      <ol>
+                        <il>Software y Hardware</il>
+                        <il>Armado de Equipos</il>
+                        <il>Instalación</il>
+                        <il>Configuración</il>
+                        <il>Asistencia Presencial/Remota</il>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </center>
+  </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+<!--PARALLAX-->
+<div id="slide1" class="slide">
+
+</div>
+<div id="slide2" class="slide">
+<!-- Testimonials -->
+<h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>  
+<img src="bandmember.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+<p><span class="w3-large w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
+<p>John Doe saved us from a web disaster.</p><br>
+
+<img src="avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+<p><span class="w3-large w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
+<p>No one is better than John Doe.</p>
+</div>
+<div id="slide3" class="slide">
+<!--img src="1.png" style="left: 40%;"-->
+<!-- Pricing Row -->
+<div class="w3-row-padding w3-center w3-padding-64 w3-black" id="pricing">
+  <h2 class="title">PRICING</h2>
+  <p>Choose a pricing plan that fits your needs.</p><br>
+  <div class="w3-third w3-margin-bottom">
+    <ul class="w3-ul w3-border w3-opacity w3-hover-opacity-off">
+      <li class="w3-dark-grey w3-xlarge w3-padding-32">
+        <p class="w3-xlarge">Basic</p>
+      </li>
+      <li class="w3-padding-16"><b>10GB</b> Storage</li>
+      <li class="w3-padding-16"><b>10</b> Emails</li>
+      <li class="w3-padding-16"><b>10</b> Domains</li>
+      <li class="w3-padding-16"><b>Endless</b> Support</li>
+      <li class="w3-padding-16">
+        <h2 class="w3-wide"><i class="fa fa-usd"></i> 10</h2>
+        <h3 class="w3-opacity">per month</h3>
+      </li>
+      <li class="w3-black w3-padding-24">
+        <span class="w3-opacity"><button class="w3-button w3-white w3-padding-large w3-hover-black"><i
+              class="fa fa-check"></i> Sign Up</button></span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="w3-third w3-margin-bottom">
+    <ul class="w3-ul w3-border w3-opacity w3-hover-opacity-off">
+      <li class="w3-dark-grey w3-xlarge w3-padding-32">
+        <p class="w3-xlarge">Pro</p>
+      </li>
+      <li class="w3-padding-16"><b>25GB</b> Storage</li>
+      <li class="w3-padding-16"><b>25</b> Emails</li>
+      <li class="w3-padding-16"><b>25</b> Domains</li>
+      <li class="w3-padding-16"><b>Endless</b> Support</li>
+      <li class="w3-padding-16">
+        <h2 class="w3-wide"><i class="fa fa-usd"></i> 25</h2>
+        <h3 class="w3-opacity">per month</h3>
+      </li>
+      <li class="w3-black w3-padding-24">
+        <span class="w3-opacity"><button class="w3-button w3-white w3-padding-large w3-hover-black"><i
+              class="fa fa-check"></i> Sign Up</button></span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="w3-third w3-margin-bottom">
+    <ul class="w3-ul w3-border w3-opacity w3-hover-opacity-off">
+      <li class="w3-dark-grey w3-xlarge w3-padding-32">
+        <p class="w3-xlarge">Premium</p>
+      </li>
+      <li class="w3-padding-16"><b>50GB</b> Storage</li>
+      <li class="w3-padding-16"><b>50</b> Emails</li>
+      <li class="w3-padding-16"><b>50</b> Domains</li>
+      <li class="w3-padding-16"><b>Endless</b> Support</li>
+      <li class="w3-padding-16">
+        <h2 class="w3-wide"><i class="fa fa-usd"></i> 50</h2>
+        <h3 class="w3-opacity">per month</h3>
+      </li>
+      <li class="w3-black w3-padding-24">
+        <span class="w3-opacity"><button class="w3-button w3-white w3-padding-large w3-hover-black"><i
+              class="fa fa-check"></i> Sign Up</button></span>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+<div id="slide4" class="slide">
+  <!-- Contact Container -->
+  <div class="w3-container" id="where" style="padding-bottom:32px;">
+    <div class="w3-content" style="max-width:700px">
+      <div class="w3-padding-16"><span class="w3-xlarge">Contact</span></div>
+      <p><strong>Just send us a message</strong></p>
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="E-mail" required name="People"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="Message"></p>
+        <p><button class="w3-button w3-black" type="submit">SEND MESSAGE</button></p>
+      </form>
+    </div>
+  </div>
+</div>
+   <!-- Footer -->
+   <footer class="w3-container w3-padding-32 w3-black w3-center">
+    <a class="w3-button w3-large w3-theme-black" href="javascript:void(0)" title="Facebook"><i
+        class="fa fa-facebook"></i></a>
+    <a class="w3-button w3-large w3-theme-black" href="javascript:void(0)" title="Google +"><i
+        class="fa fa-instagram"></i></a>
+    <a class="w3-button w3-large w3-theme-black" href="javascript:void(0)" title="Google +"><i
+        class="fa fa-whatsapp"></i></a>
+    <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+      <span class="w3-text w3-padding w3-theme-black w3-hide-small">Go To Top</span>
+      <a class="w3-button w3-theme-black" href="#myPage"><span class="w3-xlarge">
+          <i class="fa fa-chevron-circle-up w3-black"></i></span></a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script src="d3.v2.js"></script>
+  <script src="d3.parcoords.js"></script>
+  <script src="hypercube.js"></script>
+  <script>
+    var bool=false;
+    // color scale
+     function color(d) {
+      var z = 0.5 + 0.3 * d.z;
+      var w = 151 + Math.floor(40*(d.w));
+      return "rgba(1," + w + ",0," + z + ")";
+    };
+    // parallel coordinates
+    var parcoords = d3.parcoords()("#parcoords")
+      .color(color)
+      .alpha(0.8)
+      .composite("lighter");
+    // hypercube
+    var cube = hypercube();
+    cube.init()
+    // scale parallel coordinates, min/max length from center to opposite vertices 
+    parcoords
+      .data([
+        { x: -2, y: -2, z: -2, w: -2},     // minimum for each dimension
+        { x: 2, y: 2, z: 2, w: 2}          // maximum for each dimension
+      ])
+      .dimensions(["x", "y", "z", "w"])
+      .autoscale()
+      .reorderable();
+    // add hypercube vertices and render the data
+    parcoords
+      .data(cube.vertices)
+      .render()
+    // change some display properties
+    parcoords.ctx.foreground.lineWidth = 2.4;
+    parcoords.svg.selectAll(".axis g text").attr("display", "none");
+    parcoords.svg.selectAll(".axis line").attr("display", "none");
+    // animation and chart linking
+    function anim(t) {
+      cube.draw();
+      parcoords.data(cube.vertices).render();
+      var dimensions = parcoords.dimensions(); 
+      var first_dimension = dimensions[0]
+      var last_dimension = dimensions[dimensions.length-1]
+      var yscale_first = parcoords.yscale[first_dimension];
+      var yscale_last = parcoords.yscale[last_dimension];
+      var x_first = parcoords.xscale(first_dimension);
+      var x_last = parcoords.xscale(last_dimension);
+      parcoords.ctx.foreground.fillStyle = "#fff";
+      parcoords.ctx.foreground.font = "bold 12px sans-serif";
+      parcoords.ctx.foreground.textBaseline = 'middle';
+      parcoords.ctx.foreground.textAlign = 'right';
+      cube.vertices.forEach(function(d,i) {
+          parcoords.ctx.foreground.fillText(i,x_first-4,yscale_first(d[first_dimension]));
+      });
+      parcoords.ctx.foreground.textAlign = 'left';
+      cube.vertices.forEach(function(d,i) {
+          parcoords.ctx.foreground.fillText(i,x_last+4,yscale_last(d[last_dimension]));
+      });
+    }
+   d3.timer(anim);
+   /*********************************************************************************************************************/
+   function miFuncionStart(){ 
+    if(bool){
+    bool=false;
+    alert('RECARGA');
+   window.location.reload();
+  }
+  const elemento = document.getElementById("hypercube-canvas");
+  elemento.addEventListener("click", function() { 
+      if(!bool){
+      function anim() {
+      cube.draw()
+    }
+    d3.timer(0);
+  bool=true;
+alert('EL CUBO SE DETUVO, SELECCIONE UN SERVICIO');
+}});
+}
+  /*************************************************************************************************************************/
+  </script>
+</body>
+</html>
